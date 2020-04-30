@@ -1,0 +1,12 @@
+{
+  "name": "@quantum-sec/package-cloudflare",
+  "version": "0.0.0-development",
+  "private": true,
+  "description": "Contains modules for deploying and managing a Cloudflare infrastructure.",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:quantum-sec/package-cloudflare.git"
+  },
+  "author": "Quantum Security Pte. Ltd.",
+  "license": "SEE LICENSE IN LICENSE"
+}
