@@ -303,8 +303,8 @@ variable "preload_header" {
 
 variable "max_age_header" {
   description = "Whether or not to append max_age headers to responses."
-  type        = bool
-  default     = false
+  type        = number
+  default     = null
 }
 
 variable "include_subdomains" {
