@@ -55,9 +55,9 @@ resource "cloudflare_zone_settings_override" "settings" {
 
     cache_level       = var.cache_level
     h2_prioritization = var.h2_prioritization
-    image_resizing    = var.image_resizing
+    image_resizing    = var.plan == "enterprise" || var.plan == "business" ? var.image_resizing : null
     min_tls_version   = var.min_tls_version
-    polish            = var.polish
+    polish            = var.plan != "free" ? var.polish : null
     pseudo_ipv4       = var.pseudo_ipv4
     security_level    = var.security_level
     ssl               = var.ssl
