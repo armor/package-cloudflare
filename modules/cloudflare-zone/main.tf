@@ -32,30 +32,28 @@ resource "cloudflare_zone_settings_override" "settings" {
     development_mode            = var.development_mode
     email_obfuscation           = var.email_obfuscation
     hotlink_protection          = var.hotlink_protection
-    http2                       = var.http2
     http3                       = var.http3
     ip_geolocation              = var.ip_geolocation
     ipv6                        = var.ipv6
-    mirage                      = var.mirage
+    mirage                      = var.plan != "free" ? var.mirage : null
     opportunistic_encryption    = var.opportunistic_encryption
     opportunistic_onion         = var.opportunistic_onion
-    origin_error_page_pass_thru = var.origin_error_page_pass_thru
-    prefetch_preload            = var.prefetch_preload
+    origin_error_page_pass_thru = var.plan == "enterprise" ? var.origin_error_page_pass_thru : null
+    prefetch_preload            = var.plan == "enterprise" ? var.prefetch_preload : null
     privacy_pass                = var.privacy_pass
-    response_buffering          = var.response_buffering
+    response_buffering          = var.plan == "enterprise" ? var.response_buffering : null
     rocket_loader               = var.rocket_loader
     server_side_exclude         = var.server_side_exclude
-    sort_query_string_for_cache = var.sort_query_string_for_cache
+    sort_query_string_for_cache = var.plan == "enterprise" ? var.sort_query_string_for_cache : null
     tls_client_auth             = var.tls_client_auth
-    true_client_ip_header       = var.true_client_ip_header
+    true_client_ip_header       = var.plan == "enterprise" ? var.true_client_ip_header : null
     universal_ssl               = var.universal_ssl
-    waf                         = var.waf
-    webp                        = var.webp
+    waf                         = var.plan != "free" ? var.waf : null
+    webp                        = var.plan != "free" ? var.webp : null
     websockets                  = var.websockets
     zero_rtt                    = var.zero_rtt
 
     cache_level       = var.cache_level
-    cname_flattening  = var.cname_flattening
     h2_prioritization = var.h2_prioritization
     image_resizing    = var.image_resizing
     min_tls_version   = var.min_tls_version

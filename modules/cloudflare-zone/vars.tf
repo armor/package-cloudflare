@@ -79,12 +79,6 @@ variable "hotlink_protection" {
   default     = "off"
 }
 
-variable "http2" {
-  description = "Whether or not this feature is enabled."
-  type        = string
-  default     = "on"
-}
-
 variable "http3" {
   description = "Whether or not this feature is enabled."
   type        = string
@@ -196,12 +190,6 @@ variable "cache_level" {
   description = "Specify the cache level. One of `aggressive`, `basic`, or `simplified`."
   type        = string
   default     = "aggressive"
-}
-
-variable "cname_flattening" {
-  description = "Specify CNMAE flattening behaviour. One of `flatten_at_root`, `flatten_all`, or `flatten_none`."
-  type        = string
-  default     = "flatten_at_root"
 }
 
 variable "h2_prioritization" {
