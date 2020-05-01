@@ -205,7 +205,7 @@ variable "cname_flattening" {
 }
 
 variable "h2_prioritization" {
-  description = "Specify H2 prioritisation behaviour. One of `on`, `off`, or `custom`."
+  description = "Specify HTTP/2 prioritisation behaviour. One of `on`, `off`, or `custom`."
   type        = string
   default     = "off"
 }
@@ -317,4 +317,16 @@ variable "nosniff_header" {
   description = "Whether or not to include nosniff headers to responses."
   type        = bool
   default     = false
+}
+
+variable "universal_ssl" {
+  description = "Whether or not universal SSL is enabled. One of `on` or `off`."
+  type        = string
+  default     = "on"
+}
+
+variable "zero_rtt" {
+  description = "Whether or not 0-RTT is enabled. One of `on` or `off`."
+  type        = string
+  default     = "off"
 }

@@ -6,8 +6,8 @@ terraform {
   required_version = ">= 0.12"
 
   required_providers {
-    azurerm = {
-      version = ">= 2.0"
+    cloudflare = {
+      version = ">= 2.6"
     }
   }
 }
@@ -48,9 +48,11 @@ resource "cloudflare_zone_settings_override" "settings" {
     sort_query_string_for_cache = var.sort_query_string_for_cache
     tls_client_auth             = var.tls_client_auth
     true_client_ip_header       = var.true_client_ip_header
+    universal_ssl               = var.universal_ssl
     waf                         = var.waf
     webp                        = var.webp
     websockets                  = var.websockets
+    zero_rtt                    = var.zero_rtt
 
     cache_level       = var.cache_level
     cname_flattening  = var.cname_flattening
@@ -62,6 +64,7 @@ resource "cloudflare_zone_settings_override" "settings" {
     security_level    = var.security_level
     ssl               = var.ssl
     tls_1_3           = var.tls_1_3
+
 
     browser_cache_ttl = var.browser_cache_ttl
     challenge_ttl     = var.challenge_ttl
