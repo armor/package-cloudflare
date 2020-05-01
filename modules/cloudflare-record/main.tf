@@ -13,9 +13,11 @@ terraform {
 }
 
 resource "cloudflare_record" "record" {
-  zone_id = var.zone_id
-  name    = var.name
-  value   = var.value
-  type    = var.type
-  ttl     = var.ttl
+  zone_id  = var.zone_id
+  name     = var.name
+  value    = var.value
+  type     = var.type
+  ttl      = var.ttl
+  priority = var.priority
+  proxied  = var.proxied
 }

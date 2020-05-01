@@ -27,3 +27,15 @@ variable "ttl" {
   type        = number
   default     = 1
 }
+
+variable "priority" {
+  description = "The priority of the DNS record being created."
+  type        = number
+  default     = null
+}
+
+variable "proxied" {
+  description = "Whether the record gets Cloudflare's origin protection."
+  type        = bool
+  default     = false
+}
