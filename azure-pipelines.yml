@@ -15,4 +15,4 @@ resources:
 jobs:
   - template: templates/jobs/default.yml@pipeline-library
     parameters:
-      containerImage: quantumdev.azurecr.io/quantum-ci-terragrunt:latest
+      containerImage: quantumci.azurecr.io/quantum-ci-terragrunt:latest
