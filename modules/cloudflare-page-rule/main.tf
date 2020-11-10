@@ -3,11 +3,12 @@
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 terraform {
-  required_version = ">= 0.12"
+  required_version = ">= 0.13"
 
   required_providers {
     cloudflare = {
-      version = ">= 2.6"
+      source  = "cloudflare/cloudflare"
+      version = ">= 2.13.2"
     }
   }
 }
@@ -49,7 +50,6 @@ resource "cloudflare_page_rule" "rule" {
     response_buffering          = var.response_buffering == null ? null : var.response_buffering == true ? "on" : "off"
     rocket_loader               = var.rocket_loader == null ? null : var.rocket_loader == true ? "on" : "off"
     server_side_exclude         = var.server_side_exclude == null ? null : var.server_side_exclude == true ? "on" : "off"
-    smart_errors                = var.smart_errors == null ? null : var.smart_errors == true ? "on" : "off"
     sort_query_string_for_cache = var.sort_query_string_for_cache == null ? null : var.sort_query_string_for_cache == true ? "on" : "off"
     true_client_ip_header       = var.true_client_ip_header == null ? null : var.true_client_ip_header == true ? "on" : "off"
     waf                         = var.waf == null ? null : var.waf == true ? "on" : "off"
