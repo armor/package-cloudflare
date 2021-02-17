@@ -15,6 +15,7 @@ variable "name" {
 variable "value" {
   description = "The value of the DNS record."
   type        = string
+  default     = null
 }
 
 variable "type" {
@@ -38,4 +39,10 @@ variable "proxied" {
   description = "Whether the record gets Cloudflare's origin protection."
   type        = bool
   default     = false
+}
+
+variable "data" {
+  description = "A key/value map of additional record configuration data."
+  type        = map(any)
+  default     = null
 }
