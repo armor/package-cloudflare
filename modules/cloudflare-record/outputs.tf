@@ -1,23 +1,23 @@
 output "id" {
-  value = cloudflare_record.record.id
+  value = var.data == null ? cloudflare_record.value_record[0].id : cloudflare_record.data_record[0].id
 }
 
 output "hostname" {
-  value = cloudflare_record.record.hostname
+  value = var.data == null ? cloudflare_record.value_record[0].hostname : cloudflare_record.data_record[0].hostname
 }
 
 output "proxiable" {
-  value = cloudflare_record.record.proxiable
+  value = var.data == null ? cloudflare_record.value_record[0].proxiable : cloudflare_record.data_record[0].proxiable
 }
 
 output "created_on" {
-  value = cloudflare_record.record.created_on
+  value = var.data == null ? cloudflare_record.value_record[0].created_on : cloudflare_record.data_record[0].created_on
 }
 
 output "modified_on" {
-  value = cloudflare_record.record.modified_on
+  value = var.data == null ? cloudflare_record.value_record[0].modified_on : cloudflare_record.data_record[0].modified_on
 }
 
 output "metadata" {
-  value = cloudflare_record.record.metadata
+  value = var.data == null ? cloudflare_record.value_record[0].metadata : cloudflare_record.data_record[0].metadata
 }
