@@ -24,6 +24,6 @@ jobs:
           parameters:
             name: UpdateInfrastructureModules
             displayName: Update Infrastructure Modules
-            srcRepository: package-cloudflare.git
-            dstRepository: infrastructure-modules
+            packageName: package-cloudflare
+            repository: infrastructure-modules
             condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
